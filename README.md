@@ -1,27 +1,48 @@
-# React + TypeScript + Vite
+# React OpenLayers Map App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project implements an interactive map in React using the OpenLayers library.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The app displays a basic map with the following features:
 
-## Expanding the ESLint configuration
+- Renders a tile layer base map from OpenStreetMap
+- Displays map coordinates and scale info in a control panel
+- Allows clicking on the map to add marker icons
+- Changes the mouse cursor on hover over markers
+- Removes markers on click
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Implementation
 
-- Configure the top-level `parserOptions` property like this:
+The project uses:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+- React for component architecture
+- OpenLayers for the map implementation
+- Material UI for styled components
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+The key files are:
+
+- `BasicMap.tsx` - Contains the OpenLayers map setup and React hooks
+- `App.tsx` - Renders the BasicMap component
+
+The map instance is initialized on mount using a ref. Layers and interactions are added/removed based on React effects.
+
+## Running Locally
+
+To run this project locally:
+
+1. Clone the repo
+2. Run `npm install`
+3. Run `npm start`
+4. Access the app at [http://localhost:3000](http://localhost:3000)
+
+## Next Steps
+
+Some ideas for extending the application:
+
+- Add more map layers and controls
+- Integrate with GeoJSON data
+- Implement map click popup info
+- Add search/geocoding
+- Allow drawing geometries
+- Connect to backend APIs

@@ -141,10 +141,8 @@ function BasicMap() {
             const pixel = map.getEventPixel(e.originalEvent);
             const hit = map.forEachFeatureAtPixel(pixel, feature => feature);
             if (hit) {
-                console.log("mo");
                 source.removeFeature(hit as Feature<Point>)
             } else {
-                console.log("hi");
                 const feature = new Feature({
                     geometry: new Point(e.coordinate),
                     id: uniqid()
